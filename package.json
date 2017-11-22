@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "author": "Kevin Roark <kevin.e.roark@gmail.com>",
   "dependencies": {
+    "classnames": "^2.2.5",
     "emotion": "^8.0.10",
     "emotion-server": "^8.0.10",
     "firebase": "^4.6.2",
