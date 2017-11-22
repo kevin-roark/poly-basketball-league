@@ -7,6 +7,7 @@ import { css, keyframes } from 'emotion'
 import './index.css'
 import Basketball from '../components/basketball'
 import Menu from '../components/menu'
+import Footer from '../components/footer'
 
 const rainbow = keyframes`
   0% {
@@ -32,13 +33,19 @@ const rainbow = keyframes`
   }
 `
 
+const bg = css`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  animation: ${rainbow} 16s linear infinite;
+`
+
 const container = css`
   box-sizing: border-box;
   padding-top: 72px;
-  width: 100%;
-  min-height: 100vh;
-
-  animation: ${rainbow} 16s linear infinite;
 `
 
 const TemplateWrapper = ({ children }) => (
@@ -51,12 +58,15 @@ const TemplateWrapper = ({ children }) => (
       ]}
     />
 
-    <Basketball />
+    <div className={bg} />
     <Menu />
+    <Basketball />
 
     <div className={container}>
       {children()}
     </div>
+
+    <Footer />
   </div>
 )
 

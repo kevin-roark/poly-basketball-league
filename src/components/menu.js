@@ -8,8 +8,8 @@ const menuWrapper = css`
   left: 0;
   width: 100%;
   height: 72px;
-  background-color: #000;
   color: #fff;
+  text-shadow: 0 1px #000;
 `
 
 const menuList = css`
@@ -22,12 +22,21 @@ const menuList = css`
   align-items: center;
 
   & li {
-    margin: 0 5px;
+    margin: 0 20px;
     padding: 0;
+    font-size: 32px;
+    transform-origin: 50% 0;
+    transition: all 0.2s;
 
     & a {
       color: inherit;
       text-decoration: none;
+    }
+
+    &:hover {
+      background-color: #00f;
+      color: #f00;
+      transform: scale(2, 25);
     }
   }
 `
@@ -35,7 +44,7 @@ const menuList = css`
 const menuItems = [
   { title: 'Home', link: '/' },
   { title: 'Join', link: '/join' },
-  { title: 'Games', link: '/games' },
+  { title: 'Play', link: '/play' },
   { title: 'Contact', link: '/contact' }
 ]
 

@@ -8,6 +8,8 @@ const basketballWrapper = css`
   top: calc(50% + 36px);
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: -1;
+  user-select: none;
 `
 
 const basketballImg = css`
@@ -57,7 +59,7 @@ class Basketball extends Component {
 
   chooseScale() {
     const x = 0.6 + Math.random() * 0.8
-    const y = 0.7 + Math.random() * 1
+    const y = 0.7 + Math.random() * 0.9
     return `scale(${x}, ${y})`
   }
 
