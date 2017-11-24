@@ -21,14 +21,21 @@ const container = css`
     max-width: 450px;
     color: #fff;
     text-shadow: 0 1px #000, 1px 2px #000;
-    font-size: 28px;
+    font-size: 32px;
     line-height: 1.5;
   }
 
   & a {
+    display: inline-block;
+    padding: 2px;
     background-color: #f00;
-    color: #00f;
-    text-transform: uppercase;
+    color: #ff0;
+    font-weight: 600;
+    transition: all 0.2s;
+
+    &:hover {
+      transform: scale(10, 1);
+    }
   }
 `
 

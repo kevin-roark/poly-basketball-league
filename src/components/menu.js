@@ -24,7 +24,8 @@ const menuList = css`
   & li {
     margin: 0 20px;
     padding: 0;
-    font-size: 32px;
+    font-size: 36px;
+    font-weight: 600;
     transform-origin: 50% 0;
     transition: all 0.2s;
 

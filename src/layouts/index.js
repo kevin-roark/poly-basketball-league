@@ -56,7 +56,9 @@ const TemplateWrapper = ({ children }) => (
         { name: 'description', content: 'PBL is a mixed-gender very fun basketball league in NYC.' },
         { name: 'keywords', content: 'pbl, poly basketball league, nyc pickup basketball' },
       ]}
-    />
+    >
+      <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet" />
+    </Helmet>
 
     <div className={bg} />
     <Menu />
