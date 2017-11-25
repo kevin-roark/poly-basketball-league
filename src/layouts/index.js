@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
-import { css, keyframes } from 'emotion'
+import styled, { keyframes } from 'react-emotion'
 
 import './index.css'
 import Basketball from '../components/basketball'
 import Menu from '../components/menu'
 import Footer from '../components/footer'
+import data from '../data'
 
 const rainbow = keyframes`
   0% {
@@ -17,10 +18,10 @@ const rainbow = keyframes`
     background-color: #f00;
   }
   33% {
-    background-color: #ff0;
+    background-color: #0f0;
   }
   59% {
-    background-color: #ff0;
+    background-color: #0f0;
   }
   67% {
     background-color: #00f;
@@ -33,7 +34,7 @@ const rainbow = keyframes`
   }
 `
 
-const bg = css`
+const Background = styled('div')`
   position: fixed;
   top: 0;
   left: 0;
@@ -43,37 +44,47 @@ const bg = css`
   animation: ${rainbow} 16s linear infinite;
 `
 
-const container = css`
+const Container = styled('div')`
   box-sizing: border-box;
   padding-top: 72px;
 `
 
-const TemplateWrapper = ({ children }) => (
-  <div>
-    <Helmet
-      title="PBL — Poly Basketball League"
-      meta={[
-        { name: 'description', content: 'PBL is a mixed-gender very fun basketball league in NYC.' },
-        { name: 'keywords', content: 'pbl, poly basketball league, nyc pickup basketball' },
-      ]}
-    >
-      <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet" />
-    </Helmet>
+class Layout extends Component {
+  componentDidMount() {
+    data.init()
+  }
 
-    <div className={bg} />
-    <Menu />
-    <Basketball />
+  render() {
+    const { children } = this.props
 
-    <div className={container}>
-      {children()}
-    </div>
+    return (
+      <div>
+        <Helmet
+          title="PBL — Poly Basketball League"
+          meta={[
+            { name: 'description', content: 'PBL is a mixed-gender very fun basketball league in NYC.' },
+            { name: 'keywords', content: 'pbl, poly basketball league, nyc pickup basketball' },
+          ]}
+        >
+          <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet" />
+        </Helmet>
 
-    <Footer />
-  </div>
-)
+        <Background />
+        <Menu />
+        <Basketball />
 
-TemplateWrapper.propTypes = {
+        <Container>
+          {children()}
+        </Container>
+
+        <Footer />
+      </div>
+    )
+  }
+}
+
+Layout.propTypes = {
   children: PropTypes.func,
 }
 
-export default TemplateWrapper
+export default Layout

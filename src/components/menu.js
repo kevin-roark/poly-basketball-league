@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { css } from 'emotion'
+import { MobileBreakpoint } from '../layouts/util'
 
 const menuWrapper = css`
   position: fixed;
@@ -37,14 +38,19 @@ const menuList = css`
     &:hover {
       background-color: #00f;
       color: #f00;
-      transform: scale(2, 25);
+      transform: scale(2, 15);
+    }
+  }
+
+  @media (${MobileBreakpoint}) {
+    & li {
+      font-size: 28px;
     }
   }
 `
 
 const menuItems = [
   { title: 'Home', link: '/' },
-  { title: 'Join', link: '/join' },
   { title: 'Play', link: '/play' },
   { title: 'Contact', link: '/contact' }
 ]

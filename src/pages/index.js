@@ -51,8 +51,8 @@ const IndexPage = () => (
     </p>
     <p>
       Upcoming scheduled play-dates are available <Link to="/play">here</Link>.
-      You can sign up to play by registering with your phone number <Link to="/join">here</Link>.
-      It is helpful for you to do that, but you can also "just show up" :).
+      It is helpful if you sign up so that we can know how many players to expect,
+      but also feel free to "just show up" :).
     </p>
     <p>
       You can sign up for our mailing list <Link to="/contact">here</Link>, where new
