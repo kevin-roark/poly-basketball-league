@@ -60,24 +60,16 @@ class Layout extends Component {
 
     return (
       <div>
-        <Helmet
-          title="PBL — Poly Basketball League"
-          meta={[
-            {
-              name: 'description',
-              content:
-                'PBL is a mixed-gender very fun basketball league in NYC.',
-            },
-            {
-              name: 'keywords',
-              content: 'pbl, poly basketball league, nyc pickup basketball',
-            },
-          ]}
-        >
+        <Helmet>
+          <title>PBL — Poly Basketball League</title>
           <link
             href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600"
             rel="stylesheet"
           />
+          <link rel="shortcut icon" href="/favicon.png?v=0.0" />
+
+          <meta name="description" content="PBL is a mixed-gender very fun basketball league in NYC." />
+          <meta name="keywords" content="pbl, poly basketball league, nyc pickup basketball" />
         </Helmet>
 
         <Background />
