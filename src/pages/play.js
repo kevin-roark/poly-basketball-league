@@ -20,8 +20,10 @@ const GamesHeader = styled('h2')`
   font-size: 100px;
 
   @media (${MobileBreakpoint}) {
+    text-align: center;
     font-size: 72px;
     margin-left: 0;
+    margin-bottom: 10px;
   }
 `
 

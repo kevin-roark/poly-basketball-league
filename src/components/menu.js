@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import { css } from 'emotion'
-import { MobileBreakpoint } from '../layouts/util'
+import { MobileBreakpoint, NotMobileBreakpoint } from '../layouts/util'
 
 const menuWrapper = css`
   position: fixed;
@@ -34,8 +34,10 @@ const menuList = css`
       color: inherit;
       text-decoration: none;
     }
+  }
 
-    &:hover {
+  @media (${NotMobileBreakpoint}) {
+    & li:hover {
       background-color: #00f;
       color: #f00;
       transform: scale(2, 15);

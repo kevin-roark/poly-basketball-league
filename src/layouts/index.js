@@ -44,9 +44,10 @@ const Background = styled('div')`
   animation: ${rainbow} 16s linear infinite;
 `
 
-const Container = styled('div')`
+const Content = styled('div')`
   box-sizing: border-box;
   padding-top: 72px;
+  min-height: calc(100vh - 120px);
 `
 
 class Layout extends Component {
@@ -73,9 +74,9 @@ class Layout extends Component {
         <Menu />
         <Basketball />
 
-        <Container>
+        <Content>
           {children()}
-        </Container>
+        </Content>
 
         <Footer />
       </div>
