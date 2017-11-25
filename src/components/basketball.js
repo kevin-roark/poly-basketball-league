@@ -26,7 +26,7 @@ class Basketball extends Component {
 
     this.state = {
       skew: null,
-      scale: null
+      scale: null,
     }
   }
 
@@ -47,7 +47,7 @@ class Basketball extends Component {
   chooseMorph() {
     return {
       skew: this.chooseSkew(),
-      scale: this.chooseScale()
+      scale: this.chooseScale(),
     }
   }
 
@@ -67,16 +67,12 @@ class Basketball extends Component {
     const { skew, scale } = this.state
 
     const imageStyle = {
-      transform: skew ? `${scale} ${skew}` : null
+      transform: skew ? `${scale} ${skew}` : null,
     }
 
     return (
       <div className={basketballWrapper}>
-        <img
-          className={basketballImg}
-          style={imageStyle}
-          src={svgUrl}
-        />
+        <img className={basketballImg} style={imageStyle} src={svgUrl} />
       </div>
     )
   }

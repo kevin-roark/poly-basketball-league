@@ -54,7 +54,7 @@ const menuList = css`
 const menuItems = [
   { title: 'Home', link: '/' },
   { title: 'Play', link: '/play' },
-  { title: 'Contact', link: '/contact' }
+  { title: 'Contact', link: '/contact' },
 ]
 
 const Menu = () => (
@@ -62,9 +62,7 @@ const Menu = () => (
     <ul className={menuList}>
       {menuItems.map(({ title, link }) => (
         <li key={link}>
-          <Link to={link}>
-            { title }
-          </Link>
+          <Link to={link}>{title}</Link>
         </li>
       ))}
     </ul>

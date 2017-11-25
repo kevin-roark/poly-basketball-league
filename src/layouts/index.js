@@ -63,20 +63,28 @@ class Layout extends Component {
         <Helmet
           title="PBL — Poly Basketball League"
           meta={[
-            { name: 'description', content: 'PBL is a mixed-gender very fun basketball league in NYC.' },
-            { name: 'keywords', content: 'pbl, poly basketball league, nyc pickup basketball' },
+            {
+              name: 'description',
+              content:
+                'PBL is a mixed-gender very fun basketball league in NYC.',
+            },
+            {
+              name: 'keywords',
+              content: 'pbl, poly basketball league, nyc pickup basketball',
+            },
           ]}
         >
-          <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600" rel="stylesheet" />
+          <link
+            href="https://fonts.googleapis.com/css?family=Crimson+Text:400,600"
+            rel="stylesheet"
+          />
         </Helmet>
 
         <Background />
         <Menu />
         <Basketball />
 
-        <Content>
-          {children()}
-        </Content>
+        <Content>{children()}</Content>
 
         <Footer />
       </div>

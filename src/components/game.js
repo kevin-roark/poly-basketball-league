@@ -52,7 +52,7 @@ const Players = styled('div')`
       font-size: 22px;
 
       &:not(:last-child):after {
-        content: ",";
+        content: ',';
       }
     }
   }
@@ -111,7 +111,7 @@ const PlayerSignupForm = styled('form')`
   }
 `
 
-const zp = s => (s + '').length === 1 ? `0${s}` : s
+const zp = s => ((s + '').length === 1 ? `0${s}` : s)
 const getDateText = date => {
   const h = date.getHours()
   const mi = date.getMinutes()
@@ -119,9 +119,10 @@ const getDateText = date => {
   const timeText = `${h % 12}:${zp(mi)} ${ampm}`
 
   const now = new Date()
-  const isToday = date.getYear() === now.getYear()
-    && date.getMonth() === now.getMonth()
-    && date.getDate() === now.getDate()
+  const isToday =
+    date.getYear() === now.getYear() &&
+    date.getMonth() === now.getMonth() &&
+    date.getDate() === now.getDate()
 
   if (isToday) {
     return `Today at ${timeText}`
@@ -146,7 +147,7 @@ class Game extends Component {
       newPlayerName: '',
       newPlayerPhone: '',
       newPlayerEmail: '',
-      joinError: false
+      joinError: false,
     }
   }
 
@@ -170,55 +171,60 @@ class Game extends Component {
 
     if (!newPlayerName || (!newPlayerPhone && !newPlayerEmail)) {
       return this.setState({
-        joinError: true
+        joinError: true,
       })
     }
 
     data.addGamePlayer(game.id, {
       name: newPlayerName,
       phone: newPlayerPhone,
-      email: newPlayerEmail
+      email: newPlayerEmail,
     })
 
     this.setState({
       newPlayerName: '',
       newPlayerPhone: '',
       newPlayerEmail: '',
-      joinError: false
+      joinError: false,
     })
   }
 
   render() {
     const { game } = this.props
-    const { newPlayerName, newPlayerPhone, newPlayerEmail, joinError } = this.state
+    const {
+      newPlayerName,
+      newPlayerPhone,
+      newPlayerEmail,
+      joinError,
+    } = this.state
 
     const dateText = getDateText(game.date)
 
     return (
       <Container>
-        <GameDate>{ dateText }</GameDate>
-        <Location>{ game.location }</Location>
+        <GameDate>{dateText}</GameDate>
+        <Location>{game.location}</Location>
 
-        { game.note && <Note>{ game.note }</Note> }
+        {game.note && <Note>{game.note}</Note>}
 
-        { game.players.length > 0 &&
+        {game.players.length > 0 && (
           <Players>
             <PlayersLabel>
-              { game.players.length } Players Signed Up:
+              {game.players.length} Players Signed Up:
             </PlayersLabel>
             <ul>
-              { game.players.map(player =>
-                <li key={player.name}>{ player.name }</li>
-              )}
+              {game.players.map(player => (
+                <li key={player.name}>{player.name}</li>
+              ))}
             </ul>
           </Players>
-        }
+        )}
 
-        { game.upcoming &&
+        {game.upcoming && (
           <PlayerSignupContainer>
             <PlayerSignupLabel>
               Sign up to play.
-              <PlayerSignupRules className={cx({error: joinError})}>
+              <PlayerSignupRules className={cx({ error: joinError })}>
                 Just give your name and one way to contact you, please.
               </PlayerSignupRules>
             </PlayerSignupLabel>
@@ -245,7 +251,7 @@ class Game extends Component {
               <button type="submit">Join</button>
             </PlayerSignupForm>
           </PlayerSignupContainer>
-        }
+        )}
       </Container>
     )
   }

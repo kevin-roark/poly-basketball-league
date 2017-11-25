@@ -49,14 +49,14 @@ class Play extends Component {
     super(props)
 
     this.state = {
-      games: data.getGames()
+      games: data.getGames(),
     }
   }
 
   componentDidMount() {
     const setGames = () => {
       this.setState({
-        games: data.getGames()
+        games: data.getGames(),
       })
     }
 
@@ -86,16 +86,25 @@ class Play extends Component {
     return (
       <Container>
         <GamesHeader>Upcoming Games</GamesHeader>
-        { upcomingGames.length > 0
-          ? <GamesList>
-              { upcomingGames.map(game => <li key={game.id}><Game game={game} /></li> )}
-            </GamesList>
-          : <GamesNote>None!!! :( Check back soon!!!!!!</GamesNote>
-        }
+        {upcomingGames.length > 0 ? (
+          <GamesList>
+            {upcomingGames.map(game => (
+              <li key={game.id}>
+                <Game game={game} />
+              </li>
+            ))}
+          </GamesList>
+        ) : (
+          <GamesNote>None!!! :( Check back soon!!!!!!</GamesNote>
+        )}
 
         <GamesHeader>Previous Games</GamesHeader>
         <GamesList>
-          { previousGames.map(game => <li key={game.id}><Game game={game} /></li> )}
+          {previousGames.map(game => (
+            <li key={game.id}>
+              <Game game={game} />
+            </li>
+          ))}
         </GamesList>
       </Container>
     )

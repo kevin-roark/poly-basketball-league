@@ -43,20 +43,20 @@ const IndexPage = () => (
   <div className={container}>
     <img src={logoUrl} alt="Poly Basketball League Logo" />
     <p>
-      Poly Basketball League (PBL) is a loosely organized
-      series of all-gender fun + friendly basketball games in
-      New York City. People of all kinds and skill levels are welcomed
-      and we think it is a supportive environment to make friends and
-      learn / play the game!!
+      Poly Basketball League (PBL) is a loosely organized series of all-gender
+      fun + friendly basketball games in New York City. People of all kinds and
+      skill levels are welcomed and we think it is a supportive environment to
+      make friends and learn / play the game!!
     </p>
     <p>
       Upcoming scheduled play-dates are available <Link to="/play">here</Link>.
-      It is helpful if you sign up so that we can know how many players to expect,
-      but also feel free to "just show up" :).
+      It is helpful if you sign up so that we can know how many players to
+      expect, but also feel free to "just show up" :).
     </p>
     <p>
-      You can sign up for our mailing list <Link to="/contact">here</Link>, where new
-      play-dates will be announced in a VERY TIMELY FASHION. Thank you!! Hope to play soon!!
+      You can sign up for our mailing list <Link to="/contact">here</Link>,
+      where new play-dates will be announced in a VERY TIMELY FASHION. Thank
+      you!! Hope to play soon!!
     </p>
   </div>
 )

@@ -17,12 +17,12 @@ export class Data {
     }
 
     firebase.initializeApp({
-      apiKey: "AIzaSyBF-H7YBCaC1hzJk51DMwM-ZAYQtjEOmp8",
-      authDomain: "poly-basketball-league.firebaseapp.com",
-      databaseURL: "https://poly-basketball-league.firebaseio.com",
-      projectId: "poly-basketball-league",
-      storageBucket: "",
-      messagingSenderId: "76648318309"
+      apiKey: 'AIzaSyBF-H7YBCaC1hzJk51DMwM-ZAYQtjEOmp8',
+      authDomain: 'poly-basketball-league.firebaseapp.com',
+      databaseURL: 'https://poly-basketball-league.firebaseio.com',
+      projectId: 'poly-basketball-league',
+      storageBucket: '',
+      messagingSenderId: '76648318309',
     })
 
     this.gamesRef = firebase.database().ref('games')
@@ -50,8 +50,14 @@ export class Data {
   }
 
   addGamePlayer(gameId, player) {
-    const { key } = firebase.database().ref('games').push()
-    firebase.database().ref(`games/${gameId}/players/${key}`).set(player)
+    const { key } = firebase
+      .database()
+      .ref('games')
+      .push()
+    firebase
+      .database()
+      .ref(`games/${gameId}/players/${key}`)
+      .set(player)
   }
 
   onGamesValue(snapshot) {
@@ -70,7 +76,7 @@ export class Data {
           id,
           date,
           upcoming: date >= yesterday,
-          players
+          players,
         })
       })
       .sort((a, b) => b.date - a.date)
